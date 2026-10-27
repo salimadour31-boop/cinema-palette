@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinema Palette — Palettes Cinématiques</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Tifinagh&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">Cinema Palette</h1>
+    <div class="lang-switch">
+      <button data-lang="fr" class="active">FR</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="tz">ⵜⵎⵙ</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label id="label-base">Couleur de base</label>
+      <input type="color" id="base-color" value="#1a3a4a">
+      <button id="generate" class="btn">Générer</button>
+      <select id="harmony">
+        <option value="teal-orange">Teal & Orange</option>
+        <option value="analogous">Analogues</option>
+        <option value="complementary">Complémentaires</option>
+        <option value="triadic">Triadique</option>
+        <option value="split">Split-complémentaire</option>
+      </select>
+    </section>
+
+    <section class="presets">
+      <h2 id="presets-title">Presets cinématiques</h2>
+      <div class="preset-grid" id="presets"></div>
+    </section>
+
+    <section class="palette" id="palette">
+      <!-- Colors rendered here -->
+    </section>
+
+    <section class="export">
+      <button id="export-css" class="btn">Exporter CSS</button>
+      <button id="export-json" class="btn">Exporter JSON</button>
+      <button id="export-png" class="btn">Exporter PNG</button>
+      <button id="copy-hex" class="btn">Copier HEX</button>
+    </section>
+
+    <section class="extract">
+      <h2 id="extract-title">Extraire d'une image</h2>
+      <input type="file" id="image-upload" accept="image/*">
+      <canvas id="extract-canvas" style="display:none;"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p id="footer-text">Outil gratuit open source · MIT · Aucune donnée envoyée</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
